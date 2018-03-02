@@ -5,13 +5,12 @@ using System.Collections.Generic;
 
 namespace SnappySnips.Controllers
 {
-  public class ClientsController : Controller
+  public class HomeController : Controller
   {
-    [HttpGet("/clients")]
+    [HttpGet("/")]
     public ActionResult Index()
     {
-      List<Client> allClients = Client.GetAll();
-      return View(allClients);
+      return View();
     }
   }
 }

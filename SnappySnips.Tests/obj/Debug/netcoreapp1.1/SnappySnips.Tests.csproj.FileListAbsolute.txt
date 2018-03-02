@@ -1,0 +1,14 @@
+C:\Users\Jasun\desktop\SnappySnips.Solution\SnappySnips.Tests\bin\Debug\netcoreapp1.1\SnappySnips.Tests.deps.json
+C:\Users\Jasun\desktop\SnappySnips.Solution\SnappySnips.Tests\bin\Debug\netcoreapp1.1\SnappySnips.Tests.runtimeconfig.json
+C:\Users\Jasun\desktop\SnappySnips.Solution\SnappySnips.Tests\bin\Debug\netcoreapp1.1\SnappySnips.Tests.runtimeconfig.dev.json
+C:\Users\Jasun\desktop\SnappySnips.Solution\SnappySnips.Tests\obj\Debug\netcoreapp1.1\SnappySnips.Tests.csproj.CoreCompileInputs.cache
+C:\Users\Jasun\desktop\SnappySnips.Solution\SnappySnips.Tests\obj\Debug\netcoreapp1.1\SnappySnips.Tests.AssemblyInfo.cs
+C:\Users\Jasun\desktop\SnappySnips.Solution\SnappySnips.Tests\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Jasun\desktop\SnappySnips.Solution\SnappySnips.Tests\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Jasun\desktop\SnappySnips.Solution\SnappySnips.Tests\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Jasun\desktop\SnappySnips.Solution\SnappySnips.Tests\bin\Debug\netcoreapp1.1\SnappySnips.Tests.dll
+C:\Users\Jasun\desktop\SnappySnips.Solution\SnappySnips.Tests\bin\Debug\netcoreapp1.1\SnappySnips.Tests.pdb
+C:\Users\Jasun\desktop\SnappySnips.Solution\SnappySnips.Tests\bin\Debug\netcoreapp1.1\SnappySnips.dll
+C:\Users\Jasun\desktop\SnappySnips.Solution\SnappySnips.Tests\bin\Debug\netcoreapp1.1\SnappySnips.pdb
+C:\Users\Jasun\desktop\SnappySnips.Solution\SnappySnips.Tests\obj\Debug\netcoreapp1.1\SnappySnips.Tests.dll
+C:\Users\Jasun\desktop\SnappySnips.Solution\SnappySnips.Tests\obj\Debug\netcoreapp1.1\SnappySnips.Tests.pdb

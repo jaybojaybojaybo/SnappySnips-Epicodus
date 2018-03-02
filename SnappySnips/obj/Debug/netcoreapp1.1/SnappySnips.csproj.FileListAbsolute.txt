@@ -1,0 +1,9 @@
+C:\Users\Jasun\desktop\SnappySnips.Solution\SnappySnips\bin\Debug\netcoreapp1.1\SnappySnips.deps.json
+C:\Users\Jasun\desktop\SnappySnips.Solution\SnappySnips\bin\Debug\netcoreapp1.1\SnappySnips.runtimeconfig.json
+C:\Users\Jasun\desktop\SnappySnips.Solution\SnappySnips\bin\Debug\netcoreapp1.1\SnappySnips.runtimeconfig.dev.json
+C:\Users\Jasun\desktop\SnappySnips.Solution\SnappySnips\obj\Debug\netcoreapp1.1\SnappySnips.csproj.CoreCompileInputs.cache
+C:\Users\Jasun\desktop\SnappySnips.Solution\SnappySnips\obj\Debug\netcoreapp1.1\SnappySnips.AssemblyInfo.cs
+C:\Users\Jasun\desktop\SnappySnips.Solution\SnappySnips\bin\Debug\netcoreapp1.1\SnappySnips.dll
+C:\Users\Jasun\desktop\SnappySnips.Solution\SnappySnips\bin\Debug\netcoreapp1.1\SnappySnips.pdb
+C:\Users\Jasun\desktop\SnappySnips.Solution\SnappySnips\obj\Debug\netcoreapp1.1\SnappySnips.dll
+C:\Users\Jasun\desktop\SnappySnips.Solution\SnappySnips\obj\Debug\netcoreapp1.1\SnappySnips.pdb
