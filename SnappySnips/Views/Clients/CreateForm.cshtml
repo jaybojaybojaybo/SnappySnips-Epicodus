@@ -1,0 +1,24 @@
+@{
+  Layout = "_Layout";
+}
+
+
+<div class="w3-container w3-center">
+  <h2>Add a new Client</h2>
+  <div class="form-group">
+    <form action="/clients/create" method="post">
+      <label for="name"><h4>Name: </label>
+      <input type="text" id="name" name="name" class="form-control">
+      <label for="stylist"><h4>Stylist: </label>
+      <select id='stylist' name='stylist' type='text' class="form-control">
+        @foreach (var stylist in Model)
+        {
+          <option value='@stylist'>@stylist.GetName()</option>
+        }
+      </select>
+      <button type="submit">Add</button>
+    </form>
+  </div>
+  <h3><a href="/clients">Back To All Clients</a></h3>
+  <h3>Back Home</h3>
+</div>

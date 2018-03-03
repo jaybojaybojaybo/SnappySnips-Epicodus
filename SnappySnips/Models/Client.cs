@@ -213,7 +213,7 @@ namespace SnappySnips.Models
         }
     }
 
-    public List<Stylist> GetStylists()
+    public List<Stylist> GetStylist()
     {
         MySqlConnection conn = DB.Connection();
         conn.Open();

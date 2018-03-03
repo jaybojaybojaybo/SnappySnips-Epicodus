@@ -160,14 +160,14 @@ namespace SnappySnips.Tests
         //Act
         testClient1.AddStylist(firstStylist);
         List<Stylist> testList = new List<Stylist>{firstStylist};
-        List<Stylist> result = testClient1.GetStylists();
+        List<Stylist> result = testClient1.GetStylist();
 
         //Assert
         Assert.AreEqual(testList.Count, result.Count);
       }
 
       [TestMethod]
-      public void GetStylists_ReturnsAllClientStylists_StylistList()
+      public void GetStylist_ReturnsAllClientStylists_StylistList()
       {
         //Arrange
         Client testClient1 = new Client("Wu");
@@ -179,7 +179,7 @@ namespace SnappySnips.Tests
 
         //Act
         testClient1.AddStylist(firstStylist);
-        List<Stylist> result = testClient1.GetStylists();
+        List<Stylist> result = testClient1.GetStylist();
         List<Stylist> testList = new List<Stylist> {firstStylist};
 
         //Assert

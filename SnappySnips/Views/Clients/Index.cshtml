@@ -1,3 +1,33 @@
 @{
   Layout = "_Layout";
 }
+
+<div class="w3-container w3-center">
+  <h2>All Clients</h2>
+  @if (@Model.Count == 0)
+  {
+    <h3>No Clients - <a href="/stylists/create">Add a Stylist</a></h3>
+  }
+
+  @if (@Model.Count > 0)
+  {
+    <div class="w3-row">
+      <div class="w3-half">
+        @foreach(var client in @Model)
+        {
+          <h4>@client.GetName()</h4>
+        }
+      </div>
+      <div class="w3-half">
+        @foreach(var client in @Model)
+        {
+          <h4>@client.GetStylist()</h4>
+        }
+      </div>
+    </div>
+    <h3><a href="/clients/create">Create new Client</a></h3>
+    <h3><a href="/clients/delete">Delete all Clients</a></h3>
+  }
+  <h3><a href="/stylists">See All Stylists</a></h3>
+  <h3>Back Home</h3>
+</div>

@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+
+<div class="w3-container w3-center">
+  <h2>Add a new Client for @Model.GetName()</h2>
+  <div class="form-group">
+    <form action="/stylists/@Model.GetId()/clients/create" method="post">
+      <label for="name"><h4>Name: </label>
+      <input type="text" id="name" name="name" class="form-control">
+      <button type="submit">Add</button>
+    </form>
+  </div>
+  <h3><a href="/stylists/@Model.GetId()/details">Back To @Model.GetName()'s Profile</a></h3>
+  <h3><a href="/stylists">Back to All Stylsits</a></h3>
+  <h3><a href="/clients">See All Clients</a></h3>
+  <h3><a href="/">Back Home</a></h3>
+</div>

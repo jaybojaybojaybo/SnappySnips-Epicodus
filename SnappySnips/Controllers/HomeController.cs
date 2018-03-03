@@ -10,7 +10,8 @@ namespace SnappySnips.Controllers
     [HttpGet("/")]
     public ActionResult Index()
     {
-      return View();
+      List<Stylist> allStylists = Stylist.GetAll();
+      return View(allStylists);
     }
   }
 }
