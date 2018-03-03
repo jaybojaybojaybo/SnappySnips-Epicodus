@@ -134,6 +134,21 @@ namespace SnappySnips.Controllers
       return View("Details", model);
     }
 
+    [HttpGet("/stylists/{id}/delete")]
+    public ActionResult Delete(int id)
+    {
+      Stylist currentStylist = Stylist.Find(id);
+      List<Client> deletedClients = currentStylist.GetClients();
+      foreach(var client in deletedClients)
+      {
+        client.Delete(client.GetId());
+      }
+      currentStylist.Delete(currentStylist.GetId());
+
+      List<Stylist> allStylists = Stylist.GetAll();
+      return View("Index", allStylists);
+    }
+
 
   }
 }

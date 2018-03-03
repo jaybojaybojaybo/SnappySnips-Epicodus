@@ -1,0 +1,26 @@
+@{
+  Layout = "_Layout";
+}
+
+
+<div class="w3-container w3-center">
+  <h2>Edit Name and Stylist for @Model["currentClient"].GetName()</h2>
+  <h5>Original Name: @Model["currentClient"].GetName()</h5>
+  <h5>Original Stylist: @Model["currentClient"].GetStylist()</h5>
+  <div class="form-group">
+    <form action="/clients/@Model["currentClient"].GetId()/edit" method="post">
+      <label for="newName"><h4>New Name: </label>
+      <input type="text" id="newName" name="newName" class="form-control">
+      <label for="newStylist"><h4>Stylist: </label>
+      <select id='newStylist' name='newStylist' type='text' class="form-control">
+        @foreach (var stylist in Model["allStylists"])
+        {
+          <option value='@stylist.GetId()'>@stylist.GetName()</option>
+        }
+      </select>
+      <button type="submit">Update</button>
+    </form>
+  </div>
+  <h3><a href="/clients">Cancel</a></h3>
+  <h3><a href="/">Back Home</a></h3>
+</div>

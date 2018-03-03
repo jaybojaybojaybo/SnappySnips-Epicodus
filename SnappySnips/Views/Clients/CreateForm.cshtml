@@ -13,12 +13,13 @@
       <select id='stylist' name='stylist' type='text' class="form-control">
         @foreach (var stylist in Model)
         {
-          <option value='@stylist'>@stylist.GetName()</option>
+          <option value='@stylist.GetId()'>@stylist.GetName()</option>
         }
       </select>
       <button type="submit">Add</button>
     </form>
   </div>
-  <h3><a href="/clients">Back To All Clients</a></h3>
+  <h3><a href="/stylists">See All Stylists</a></h3>
+  <h3><a href="/clients">See All Clients</a></h3>
   <h3>Back Home</h3>
 </div>

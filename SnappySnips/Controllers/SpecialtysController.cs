@@ -29,11 +29,21 @@ namespace SnappySnips.Controllers
       return View("Index", allSpecialtys);
     }
 
-    [HttpPost("/specialtys/delete")]
+    [HttpGet("/specialtys/delete")]
     public ActionResult DeleteAll()
     {
       Specialty.DeleteAll();
       specialtys_stylists.DeleteAll();
+      List<Specialty> allSpecialtys = Specialty.GetAll();
+      return View("Index", allSpecialtys);
+    }
+
+    [HttpGet("/specialtys/{id}/delete")]
+    public ActionResult Delete(int id)
+    {
+      Specialty currentSpecialty = Specialty.Find(id);
+      currentSpecialty.Delete(currentSpecialty.GetId());
+
       List<Specialty> allSpecialtys = Specialty.GetAll();
       return View("Index", allSpecialtys);
     }

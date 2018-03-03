@@ -13,22 +13,26 @@
   {
     @foreach(var specialty in @Model)
     {
-      <div class="w3-row">
-        <div class="w3-half">
-          <h4>@specialty.GetName()</h4>
-        </div>
-        <div class="w3-half">
-          @foreach(var stylist in @specialty.GetStylists())
-          {
-            <li>@stylist.GetName()</li>
-          }
+      <div class="w3-container">
+        <div class="w3-row" id="specialty">
+          <div class="w3-half">
+            <h4>@specialty.GetName() | <a href="/specialtys/@specialty.GetId()/delete">Delete</a></h4>
+          </div>
+          <div class="w3-half">
+            @foreach(var stylist in @specialty.GetStylists())
+            {
+              <h4><a href="/stylists/@stylist.GetId()/details">@stylist.GetName()</a></h4>
+            }
+          </div>
         </div>
       </div>
+      <br>
+      <br>
     }
-    <h5><a href="/clients/delete">Delete all Specialties</a></h5>
+    <h5><a href="/specialtys/delete">Delete all Specialties</a></h5>
   }
-  <h3><a href="/stylists">See All Stylists</a></h3>
   <h3><a href="/specialtys/create">Add New Specialty</a></h3>
   <h3><a href="/stylists">See All Stylists</a></h3>
+  <h3><a href="/stylists/create">Add New Stylists</a></h3>
   <h3><a href="/">Back Home</a></h3>
 </div>

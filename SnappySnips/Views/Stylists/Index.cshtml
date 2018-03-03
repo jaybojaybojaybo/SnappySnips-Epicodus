@@ -12,25 +12,33 @@
   @if (@Model.Count > 0)
   {
     <div class="w3-row">
-      <div class="w3-half">
+      <div class="w3-third">
         @foreach(var stylist in @Model)
         {
-          <h4><a href="/stylists/@stylist.GetId()/details">@stylist.GetName()</a> | <a href="/stylists/@stylist.GetId()/edit">Edit</a></h4>
+          <h4><a href="/stylists/@stylist.GetId()/details">@stylist.GetName()</a></h4>
         }
       </div>
-      <div class="w3-half">
+      <div class="w3-third">
         @foreach(var stylist in @Model)
         {
           <h4>@stylist.GetHireDate().ToShortDateString()</h4>
         }
       </div>
+      <div class="w3-third">
+        @foreach(var stylist in @Model)
+        {
+          <h4><a href="/stylists/@stylist.GetId()/delete">Delete</a></h4>
+        }
+      </div>
     </div>
   }
   <h3><a href="/stylists/create">Create new Stylist</a></h3>
+  <h3><a href="/specialtys">See all Specialties</a></h3>
 
   @if (@Model.Count > 0)
   {
     <h3><a href="/clients/create">Create new Client</a></h3>
+    <h3><a href="/clients">See All Clients</a></h3>
   }
   <form action="/stylists/delete" method="post">
       <button type="submit" name="button">Fire All Stylists</button>

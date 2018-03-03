@@ -156,14 +156,6 @@ namespace SnappySnips.Models
      MySqlConnection conn = DB.Connection();
      conn.Open();
 
-     var cmd1 = conn.CreateCommand() as MySqlCommand;
-     cmd1.CommandText = @"TRUNCATE TABLE stylists;";
-     cmd1.ExecuteNonQuery();
-
-     var cmd2 = conn.CreateCommand() as MySqlCommand;
-     cmd2.CommandText = @"TRUNCATE TABLE clients;";
-     cmd2.ExecuteNonQuery();
-
      var cmd3 = conn.CreateCommand() as MySqlCommand;
      cmd3.CommandText = @"TRUNCATE TABLE specialtys;";
      cmd3.ExecuteNonQuery();
