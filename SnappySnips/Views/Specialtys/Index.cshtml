@@ -1,3 +1,34 @@
 @{
   Layout = "_Layout";
 }
+
+<div class="w3-container w3-center">
+  <h2>Specialties</h2>
+  @if (@Model.Count == 0)
+  {
+    <h3>No Specialties</h3>
+  }
+
+  @if (@Model.Count > 0)
+  {
+    @foreach(var specialty in @Model)
+    {
+      <div class="w3-row">
+        <div class="w3-half">
+          <h4>@specialty.GetName()</h4>
+        </div>
+        <div class="w3-half">
+          @foreach(var stylist in @specialty.GetStylists())
+          {
+            <li>@stylist.GetName()</li>
+          }
+        </div>
+      </div>
+    }
+    <h5><a href="/clients/delete">Delete all Specialties</a></h5>
+  }
+  <h3><a href="/stylists">See All Stylists</a></h3>
+  <h3><a href="/specialtys/create">Add New Specialty</a></h3>
+  <h3><a href="/stylists">See All Stylists</a></h3>
+  <h3><a href="/">Back Home</a></h3>
+</div>

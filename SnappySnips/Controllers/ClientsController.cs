@@ -34,6 +34,7 @@ namespace SnappySnips.Controllers
     public ActionResult DeleteAll()
     {
       Client.DeleteAll();
+      clients_stylists.DeleteAll();
       List<Client> allClients = Client.GetAll();
       return View("Index", allClients);
     }

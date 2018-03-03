@@ -1,0 +1,17 @@
+@{
+  Layout = "_Layout";
+}
+
+
+<div class="w3-container w3-center">
+  <h2>Add a new Specialty</h2>
+  <div class="form-group">
+    <form action="/specialtys/create" method="post">
+      <label for="name"><h4>Name: </label>
+      <input type="text" id="name" name="name" class="form-control">
+      <button type="submit">Add</button>
+    </form>
+  </div>
+  <h3><a href="/specialtys">Back To All Specialties</a></h3>
+  <h3><a href="/">Back Home</a></h3>
+</div>

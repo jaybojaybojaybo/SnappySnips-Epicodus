@@ -15,7 +15,7 @@
       <div class="w3-half">
         @foreach(var stylist in @Model)
         {
-          <h4><a href="/stylists/@stylist.GetId()/details">@stylist.GetName()</a></h4>
+          <h4><a href="/stylists/@stylist.GetId()/details">@stylist.GetName()</a> | <a href="/stylists/@stylist.GetId()/edit">Edit</a></h4>
         }
       </div>
       <div class="w3-half">

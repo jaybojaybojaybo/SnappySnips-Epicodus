@@ -13,12 +13,14 @@
   {
     <div class="w3-row">
       <div class="w3-half">
+        <h3>Client</h3>
         @foreach(var client in @Model)
         {
           <h4>@client.GetName()</h4>
         }
       </div>
       <div class="w3-half">
+        <h3>Stylist</h3>
         @foreach(var client in @Model)
         {
           <h4>@client.GetStylist()</h4>
@@ -29,5 +31,5 @@
     <h3><a href="/clients/delete">Delete all Clients</a></h3>
   }
   <h3><a href="/stylists">See All Stylists</a></h3>
-  <h3>Back Home</h3>
+  <h3><a href="/">Back Home</a></h3>
 </div>

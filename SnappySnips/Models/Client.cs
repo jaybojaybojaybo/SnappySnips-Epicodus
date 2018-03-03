@@ -213,7 +213,7 @@ namespace SnappySnips.Models
         }
     }
 
-    public List<Stylist> GetStylist()
+    public string GetStylist()
     {
         MySqlConnection conn = DB.Connection();
         conn.Open();
@@ -227,14 +227,14 @@ namespace SnappySnips.Models
 
         MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
 
-        List<Stylist> clients = new List<Stylist> {};
+        string clientStylistName = "";
         while(rdr.Read())
         {
           int stylistId = rdr.GetInt32(0);
           string stylistName = rdr.GetString(1);
           System.DateTime hireDate = rdr.GetDateTime(2);
           Stylist foundStylist = new Stylist(stylistName, hireDate, stylistId);
-          clients.Add(foundStylist);
+          clientStylistName = foundStylist.GetName();
         }
         rdr.Dispose();
 
@@ -243,7 +243,7 @@ namespace SnappySnips.Models
         {
             conn.Dispose();
         }
-        return clients;
+        return clientStylistName;
     }
   }
 }

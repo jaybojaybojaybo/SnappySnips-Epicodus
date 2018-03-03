@@ -68,13 +68,72 @@ namespace SnappySnips.Controllers
       return View("Details", model);
     }
 
+    [HttpGet("/stylists/{id}/specialtys/create")]
+    public ActionResult CreateSpecialty(int id)
+    {
+      Stylist currentStylist = Stylist.Find(id);
+
+      Dictionary<string, object> model = new Dictionary<string, object> {};
+      List<Specialty> allSpecialtys = Specialty.GetAll();
+      model.Add("currentStylist", currentStylist);
+      model.Add("allSpecialtys", allSpecialtys);
+      return View(model);
+    }
+
+    [HttpPost("/stylists/{id}/specialtys/create")]
+    public ActionResult SpecialtyCreate(int id)
+    {
+      Stylist currentStylist = Stylist.Find(id);
+      int specialtyId = Convert.ToInt32(Request.Form["specialty"]);
+      Specialty newSpecialty = Specialty.Find(specialtyId);
+
+      newSpecialty.AddStylist(currentStylist);
+
+      Dictionary<string, object> model = new Dictionary<string, object> {};
+      List<Client> stylistClients = currentStylist.GetClients();
+      List<Specialty> stylistSpecialtys = currentStylist.GetSpecialtys();
+      model.Add("currentStylist", currentStylist);
+      model.Add("stylistClients", stylistClients);
+      model.Add("stylistSpecialtys", stylistSpecialtys);
+      return View("Details", model);
+    }
+
     [HttpPost("/stylists/delete")]
     public ActionResult DeleteAll()
     {
       Stylist.DeleteAll();
       Client.DeleteAll();
+      clients_stylists.DeleteAll();
+      specialtys_stylists.DeleteAll();
       List<Stylist> allStylists = Stylist.GetAll();
       return View("Index", allStylists);
     }
+
+    [HttpGet("/stylists/{id}/edit")]
+    public ActionResult EditForm(int id)
+    {
+      Stylist currentStylist = Stylist.Find(id);
+      return View(currentStylist);
+    }
+
+    [HttpPost("/stylists/{id}/edit")]
+    public ActionResult Edit(int id)
+    {
+      Stylist currentStylist = Stylist.Find(id);
+      string newName = Request.Form["newName"];
+      DateTime newHireDate = DateTime.Parse(Request.Form["newHireDate"]);
+      currentStylist.EditName(newName);
+      currentStylist.EditHireDate(newHireDate);
+
+      Dictionary<string, object> model = new Dictionary<string, object> {};
+      List<Client> stylistClients = currentStylist.GetClients();
+      List<Specialty> stylistSpecialtys = currentStylist.GetSpecialtys();
+      model.Add("currentStylist", currentStylist);
+      model.Add("stylistClients", stylistClients);
+      model.Add("stylistSpecialtys", stylistSpecialtys);
+      return View("Details", model);
+    }
+
+
   }
 }

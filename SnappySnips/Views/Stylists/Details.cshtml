@@ -6,11 +6,14 @@
 <div class="w3-container w3-center">
   <h2>@Model["currentStylist"].GetName()</h2>
   <h4>Hire Date: @Model["currentStylist"].GetHireDate().ToShortDateString()</h4>
+
   <h4>Specialies: </h4>
   @foreach(var specialty in @Model["stylistSpecialtys"])
   {
     <li>@specialty.GetName()</li>
   }
+  <h4><a href="/stylists/@Model["currentStylist"].GetId()/specialtys/create">Add Specialty</a></h4>
+
   <h3>Clients: </h3>
   @if(@Model["stylistClients"].Count == 0)
   {

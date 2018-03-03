@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+
+<div class="w3-container w3-center">
+  <h2>Edit Name and Hire Date for @Model.GetName()</h2>
+  <h5>Original Name: @Model.GetName()</h5>
+  <h5>Original Hire Date: @Model.GetHireDate().ToShortDateString()</h5>
+  <div class="form-group">
+    <form action="/stylists/@Model.GetId()/edit" method="post">
+      <label for="newName"><h4>New Name: </label>
+      <input type="text" id="newName" name="newName" class="form-control">
+      <label for="newHireDate"><h4>New Hire Date: </label>
+      <input type="date" id="newHireDate" name="hireDate">
+      <button type="submit">Add</button>
+    </form>
+  </div>
+  <h3><a href="/stylists/@Model.GetId()/details">Cancel</a></h3>
+  <h3><a href="/stylists">Back To All Stylists</a></h3>
+  <h3><a href="/">Back Home</a></h3>
+</div>
