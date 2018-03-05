@@ -1,78 +1,86 @@
 
-# Snappy Snips 
+# Snappy Snips
 #### By Jasun Feddema
 
 ## Description
-Hair Salon: keep track of your stylists and their clients
+Snappy Snips: keep track of your stylists, their specialties, and their clients.
 
 ## Specifications
-* Take input from the user(employee) for a Stylist in a single string.
-  - example input: "Kim Johnson"
-  - example output: New Stylist: "Kim Johnson"
-
-* When a Stylist is entered, a Stylist object is created.
-  - example input: "Kim Johnson"
+* Take input from the user(employee) for a Stylist in a single string and a datetime to create new Stylist object in stylists database.
+  - example input:
+  name: "Kim Johnson
+  hire date: "03/02/2018"
   - example output:
     id: 1
-    Stylist: Kim Johnson
+    name: "Kim Johnson"
+    hireDate: "03/02/2018"    
 
-* Once the Stylist is created, take employee input to enter a client via a form on the Stylist's client creation page.
-  Clients can only be entered on a Stylist's client creation page.
-  - example input: "Client Von Clientele"
-  - example output: "Client Von Clientele"
-
-  - example input: "Yu Zerbase"
-  - example output: "Yu Zerbase"
-
-* When a client is entered, a full client object is created.
-  - example input: "Client Von Clientele"
+* Once stylist is created, take input from the user(employee) for a Client in a single string to create new Client object in clients database.
+  - example input: "Client von Clientele"
   - example output:
     id: 1
-    Client: "Client von Clientele"
-    Stylist: 1
+    name: "Client von Clientele"
 
-  - example input: "Yu Zerbase"
+* Once stylist is created, take input from the user(employee) for a Specialty in a single string to create new Specialty object in specialtys database.
+  - example input: "Coloring"
   - example output:
-    id: 2
-    Client: "Yu Zerbase"
-    Stylist: 1
+    id: 1
+    name: "Coloring"
 
-* Take input from the employee for a second Stylist in a single string.
-  - example input: "John Johns"
-  - example output:
-    id: 2
-    Stylist: "John Johns"
+* From a Stylist's profile page, user can assign a specialty to the stylist.
+  - example input:
+    Stylist: "Kim" (id:1)
+    Specialty: "Cutting" (id:3)
 
-* Once the Stylist is created, take employee input to enter a client via a form on the Stylist's page.
-  - example input (while on John Johns' Stylist Page): "Marsha Martia-Martsché"
-  - example output:
-    id: 3
-    Client: "Marsha Martia-Martsché"
-    Stylist: 2    
+  - example output (on join table):
+    id: 1
+    stylist_id: 1
+    specialty_id: 3
 
-* Stylist List page will have the following Stylists and associated links:
-  - "Kim Johnson"
-  - "John Johns"
+* From a Stylist's profile page, user can create a Client that associates them to that stylist automatically.
+  - example input (from Stylist Kim's profile page):
+    Client Name: "Yu Zerbase" (id: 4)
 
-* Clicking on "Kim Johnson" will show the correlated client list:
-  - "Client Von Clientele"
-  - "Yu Zerbase"
+  - example output (on join table):
+    id: 1
+    stylist_id: 1
+    client_id: 4
 
-* Clicking on "John Johns" will show the correlated client list:
-  - "Marsha Martia-Martsché"
 
-* User can access list of all Clients via a link on the HairSalon summary page and see their associated Stylists:
-  - example display:
-   Clients: "Client Von Clientele", "Yu Zerbase", "Marsha Martia-Martsché"
-   Stylists: "Kim Johnson", "Kim Johnson", "John Johns"
+* From the Clients Index page, user can create a new Client by entering the client's name and choosing a stylist from a dropdown menu.
+- example input:
+  Client Name: "Polly Anna"
+  Stylist: "Kim Johnson"
+
+- example output (on join table):
+  id: 2
+  stylist_id: 1
+  client_id: 5
+
+* From Stylists Index page, user can delete a Stylist, which would delete that stylist and all their clients.
+
+* From Clients Index page, user can delete a Client, which would delete that client.
+
+* From Specialties Index page, user can delete a Specialty, which would delete that specialty.
+
+* All clients, stylists, and specialty names can be updated.
+
+* Stylist's hire dates can be updated.
+
 
 ## Setup/Installation Requirements
 
-* Clone the git repository from 'https://github.com/jaybojaybojaybo/HairSalon-Epicodus'.
-* Run the command 'dotnet restore' in the HairSalon folder to download the necessary packages.
-* While still in the WordCounter folder, run the command 'dotnet run' to build and run the server on localhost.
+* Make sure all necessary software is installed: 
+* Clone the git repository from 'https://github.com/jaybojaybojaybo/SnappySnips-Epicodus'.
+* Navigate to the SnappySnips.Tests folder and run the command "dotnet resore".
+* In the SnappySnips folder, run the following command: "dotnet add package MySQLConnector"
+* Run the command 'dotnet restore' in the SnappySnips folder to download the necessary packages.
+* Using MAMP, setup database to port 8889.
+* Navigate to myPHPadmin from the MAMP online start page.
+* While in myPHPadmin, select import to import the database - navigate to the Solution folder of the SnappySnips project and select the "jasun_feddema" and "jasun_feddema_tests" databases.
+* While in the SnappySnips folder, run the command 'dotnet run' to run the app.
 * Use your preferred web browser to navigate to localhost:5000
-* Follow instructions on webpage for the Word Counter experience.
+* Follow instructions on webpage for the SnappySnips app experience.
 
 
 ## Support and contact details
@@ -83,6 +91,8 @@ Hair Salon: keep track of your stylists and their clients
 
 * C#
 * Asp .NET Core MVC
+* MAMP
+* MySql
 * HTML
 * CSS
 * Javascript
