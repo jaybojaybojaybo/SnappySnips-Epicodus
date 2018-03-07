@@ -156,14 +156,13 @@ namespace SnappySnips.Tests
         Stylist firstStylist = new Stylist("Kim", hireDate);
         firstStylist.Save();
 
-
         //Act
         testClient1.AddStylist(firstStylist);
         List<Stylist> testList = new List<Stylist>{firstStylist};
-        List<Stylist> result = testClient1.GetStylist();
+        string result = testClient1.GetStylist();
 
         //Assert
-        Assert.AreEqual(testList.Count, result.Count);
+        Assert.AreEqual(testList[0].GetName(), result);
       }
 
       [TestMethod]
@@ -179,11 +178,11 @@ namespace SnappySnips.Tests
 
         //Act
         testClient1.AddStylist(firstStylist);
-        List<Stylist> result = testClient1.GetStylist();
+        string result = testClient1.GetStylist();
         List<Stylist> testList = new List<Stylist> {firstStylist};
 
         //Assert
-        Assert.AreEqual(testList.Count, result.Count);
+        Assert.AreEqual(testList[0].GetName(), result);
         // CollectionAssert.AreEqual(testList, result);
       }
   }
